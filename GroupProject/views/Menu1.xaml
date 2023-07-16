@@ -1,0 +1,282 @@
+﻿<UserControl x:Class="GroupProject.views.Menu1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GroupProject.views" xmlns:local1="clr-namespace:GroupProject.viewModels"
+             mc:Ignorable="d" 
+             Foreground="Black"
+             Background="Transparent"
+             FontWeight="Bold"
+             d:DesignHeight="500" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <local1:Menu1VM/>
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Border Width="780" Background="Transparent" Margin="0,240,20,-240">
+            
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,-228,0,250">
+                
+                <StackPanel Orientation="Vertical" Width="780" 
+                            x:Name="registerMenu">
+
+                    <TextBlock Text="Register Patient"
+                        FontSize="25"
+                        FontFamily="Elephant"
+                        HorizontalAlignment="Center"
+                        Margin="0,20,0,20"/>
+
+                    <TextBlock Text="Personal Details"                 
+                        FontSize="15"
+                        FontWeight="ExtraBold"
+                        Margin="180,0,0,10"/>
+                    
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock VerticalAlignment="Top" 
+                                    HorizontalAlignment="Left" 
+                                   Text="Name" 
+                                   FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110"  />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" 
+                                Margin="10 10">
+                            
+                            <TextBox x:Name="PName" Width="430"  
+                                        Margin="2 2 2 2"
+                                        FontSize="15"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        Style="{StaticResource textHint}"
+                                        Text="{Binding PName}"/>
+                            
+                        </Border>
+                        
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+
+                        <TextBlock VerticalAlignment="Top" 
+                                   HorizontalAlignment="Left" 
+                                   Text="Age" FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110" />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" 
+                                Margin="10 10">
+
+                            <TextBox x:Name="PAge" Width="100" 
+                                    Margin="2 2 2 2"
+                                    FontSize="15"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Style="{StaticResource textHint}"
+                                    Text="{Binding PAge}"
+                                    TextChanged="PAge_TextChanged"
+                                    LostFocus="PAge_LostFocus"
+                                    />
+
+                        </Border>
+                        
+                        <TextBlock VerticalAlignment="Top" 
+                                   HorizontalAlignment="Left" 
+                                   Text="Gender" 
+                                   FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110" />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" Margin="3 8"
+                                Padding="2">
+                            
+                            <ComboBox x:Name="PGender" Width="100"
+                                    IsEditable="True"
+                                    FontSize="15"
+                                    Foreground="#345"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    ItemsSource="{Binding Path=PGenders}"
+                                    SelectedItem="{Binding PGender}"
+                                    />
+
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock VerticalAlignment="Top" 
+                                   HorizontalAlignment="Left" 
+                                   Text="Address" 
+                                   FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110"  />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" 
+                                Margin="10 10">
+                            
+                            <TextBox x:Name="PAddress" 
+                                     Width="430" 
+                                     FontSize="15"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Style="{StaticResource textHint}"
+                                     Text="{Binding PAddress}"/>
+                            
+                        </Border>
+                        
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock VerticalAlignment="Top" 
+                                   HorizontalAlignment="Left" 
+                                   Text="Telephone Num." 
+                                   FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110"  />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" Margin="10 10">
+                            
+                            <TextBox x:Name="PTNum" Width="200"
+                                        FontSize="15"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        Style="{StaticResource textHint}"
+                                        Text="{Binding PTNum}"/>
+                            
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock VerticalAlignment="Top" 
+                                   HorizontalAlignment="Left" 
+                                   Text="Admitted Date" 
+                                   FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110" />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" 
+                                Margin="10 10">
+
+                            <DatePicker x:Name="PDate" 
+                                     IsTodayHighlighted="True"
+                                     Width="200"  
+                                     FontSize="15"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     SelectedDate="{Binding AdmittedDate,UpdateSourceTrigger=PropertyChanged}"
+                                     SelectedDateFormat="Short"
+                                     DisplayDateStart="11/30/2015"
+                                     DisplayDateEnd="12/31/2024"/>
+
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel>
+                        
+                        <TextBlock Text="Emergency Contact"
+                                   FontSize="15"
+                                   FontWeight="ExtraBold"
+                                   HorizontalAlignment="Left"
+                                   Margin="180,0,0,0" 
+                                   Width="220"/>
+
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock VerticalAlignment="Top" 
+                                   HorizontalAlignment="Left" 
+                                   Text="Name" 
+                                   FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110" 
+                                   RenderTransformOrigin="0.208,0.205" />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" Margin="10 10">
+
+                            <TextBox x:Name="PGuard" 
+                                    Width="200"      
+                                    FontSize="15"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Style="{StaticResource textHint}"
+                                    Text="{Binding PGuard}"/>
+
+                        </Border>
+                        
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock VerticalAlignment="Top" 
+                                   HorizontalAlignment="Left" 
+                                   Text="Telephone Num" FontSize="15"
+                                   Background="Transparent"
+                                   Margin="100,10,0,0"
+                                   Width="110"
+                                   RenderTransformOrigin="0.208,0.205" />
+
+                        <Border BorderBrush="Teal" 
+                                BorderThickness="2"
+                                CornerRadius="5" Margin="10 10">
+
+                            <TextBox x:Name="PGTeleNum" 
+                                     Width="200"
+                                     FontSize="15"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Style="{StaticResource textHint}"
+                                     Text="{Binding PGTeleNum}"/>
+
+                        </Border>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <Button  Style="{StaticResource CircleButton}"
+                                 Content="Register"                                 
+                                 Command="{Binding insertPatientCommand}" 
+                                 Width="120" 
+                                 Margin="0,40,0,50"
+                         />
+
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+       
+    </Grid>
+
+</UserControl>
